@@ -1,14 +1,15 @@
 /*Elabore um programa que faça leitura de vários números inteiros, até que se digite um
 número negativo. O programa tem que retornar o maior e o menor número lido.*/
+#include <limits.h>
 #include <stdio.h>
 
 int main() {
-  int numbers[] = {0, 2147483647};
+  int numbers[] = {0, INT_MAX};
   int temp = 0;
   while(temp >= 0) {
     printf("Digite um número inteiro: ");
     scanf("%d", &temp);
-    if (temp < 0 && numbers[1] == 2147483647) {
+    if (temp < 0 && numbers[1] == INT_MAX) {
       numbers[1] = 0;
       break;
     }
