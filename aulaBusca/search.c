@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "../myFunctions/myFunctions.h"
 
 // int search(int arr[], int size, int target) {
 //   for (int i = 0; i < size; i++) {
@@ -9,23 +10,23 @@
 //   return -1;
 // }
 
-// int binarySearch(int arr[], int size, int target) {
-//   int head = 0;
-//   int tail = size - 1;
-//   while (head <= tail) {
-//     int half = head + (tail - head) / 2;
-//     if (arr[half] == target) {
-//       return half;
-//     }
-//     else if (arr[half] < target) {
-//       head = half + 1;
-//     }
-//     else {
-//       tail = half - 1;
-//     }
-//   }
-//   return -1;
-// }
+int binarySearch2(int arr[], int size, int target) {
+  int head = 0;
+  int tail = size - 1;
+  while (head <= tail) {
+    int half = head + (tail - head) / 2;
+    if (arr[half] == target) {
+      return half;
+    }
+    else if (arr[half] < target) {
+      head = half + 1;
+    }
+    else {
+      tail = half - 1;
+    }
+  }
+  return -1;
+}
 
 
 int binarySearch(int arr[], int target, int head, int tail) {
@@ -55,6 +56,7 @@ int main() {
   //   printf("indice: %d\n", search(arr, 7, 54));
   // }
 
+  imprimirVetor(arr2, 7);
   printf("indice: %d\n", binarySearch(arr2, -8, 0, 6));
   return 0;
 }
