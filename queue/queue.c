@@ -47,6 +47,16 @@ void enQueue(Queue *queue, int val) {
   }
 }
 
+void deQueue(Queue *queue) {
+  if (queue->head == NULL) {
+    return;
+  }
+  Node *temp = queue->head;
+  queue->head = queue->head->next;
+  free(temp);
+  queue->size--;
+}
+
 int main() {
   Queue *queue = createQueue(5);
   enQueue(queue, 1);
